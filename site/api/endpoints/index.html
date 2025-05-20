@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Endpoints - Music API Docs</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Endpoints";
+        var mkdocs_page_input_path = "api\\endpoints.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Music API Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Overview</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../overview/what-is-api/">What is the API?</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../overview/key-concepts/">Key Concepts</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">API Reference</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../authentication/">Authentication</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Endpoints</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#returns-the-playlists-get-playlists">Returns the playlists - GET Playlists</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#url">URL</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#query-parameters">Query Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#headers">Headers</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sample-request">Sample Request</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response">Response</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#details-of-the-playlist-with-songs">Details of the playlist with songs.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#componentsschemasplaylistwithsongs">/components/schemas/playlistwithsongs</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#details-of-related-to-the-songs-in-the-playlist">Details of related to the songs in the playlist.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#componentsschemassong">/components/schemas/song</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sample-response">Sample Response</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#creates-a-playlist-post-playlist">Creates a playlist - POST Playlist</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#url_1">URL</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#headers_1">Headers</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#request-body">Request Body</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#details-of-the-new-song-playlist">Details of the new song playlist</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#componentsschemasnewplaylist">/components/schemas/newPlaylist</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sample-request_1">Sample Request</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_1">Response</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#details-of-the-playlist-with-songs_1">Details of the playlist with songs.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#componentsschemasplaylistwithsongs_1">/components/schemas/playlistwithsongs</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#details-of-related-to-the-songs-in-the-playlist_1">Details of related to the songs in the playlist.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#componentsschemassong_1">/components/schemas/song</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sample-response_1">Sample Response</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#returns-a-specific-playlist-get-specific-playlist">Returns a specific playlist - GET Specific Playlist</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#url_2">URL</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#path-parameters">Path Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#headers_2">Headers</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sample-request_2">Sample Request</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_2">Response</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#details-of-the-playlist-with-songs_2">Details of the playlist with songs.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#componentsschemasplaylistwithsongs_2">/components/schemas/playlistwithsongs</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#details-of-related-to-the-songs-in-the-playlist_2">Details of related to the songs in the playlist.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#componentsschemassong_2">/components/schemas/song</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sample-response_2">Sample Response</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#deletes-a-specific-playlist-delete-specific-playlist">Deletes a specific playlist - DELETE Specific Playlist</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#url_3">URL</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#path-parameters_1">Path Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#headers_3">Headers</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sample-request_3">Sample Request</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_3">Response</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#details-of-the-error-message-in-response">Details of the error message in response.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#componentsschemaserror">/components/schemas/error</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#details-of-logdata">Details of logdata.</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sample-response_3">Sample Response</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#returns-a-specific-playlist-as-image-get-specific-playlist-as-image">Returns a specific playlist as Image - GET Specific Playlist as Image</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#url_4">URL</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#path-parameters_2">Path Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#headers_4">Headers</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sample-request_4">Sample Request</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sample-response_4">Sample Response</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../errors/">Errors & Status Codes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Use Cases</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../use-cases/quickstart/">Quickstart</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../use-cases/real-world/">Real-World Scenarios</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Tools</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tools/swagger/">Swagger / OpenAPI Spec</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Changelog</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../changelog/api-versions/">API Version History</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Music API Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">API Reference</li>
+      <li class="breadcrumb-item active">Endpoints</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="api-endpoints">API Endpoints</h1>
+<p>The following endpoints allow you to Get, Create &amp; Delete your Playlists via the Music API.</p>
+<ol>
+<li>
+<h2 id="returns-the-playlists-get-playlists">Returns the playlists - GET Playlists</h2>
+Gets all the song playlists of a user.</li>
+</ol>
+<h5 id="url"><strong>URL</strong></h5>
+<div class="highlight"><pre><span></span><code>GET<span class="w"> </span>https://api.muzicplayz.com/v3/playlist
+</code></pre></div>
+<h5 id="query-parameters"><strong>Query Parameters</strong></h5>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>limit</code></td>
+<td>Number of playlists to return</td>
+<td>integer</td>
+<td style="text-align: center;">No</td>
+</tr>
+<tr>
+<td><code>offset</code></td>
+<td>Index of the first playlist to return (e.g., <code>0</code> = start at beginning, <code>10</code> = skip first 10)</td>
+<td>integer</td>
+<td style="text-align: center;">No</td>
+</tr>
+<tr>
+<td><code>search</code></td>
+<td>Filter/Search for playlists matching a specific keyword or type of song</td>
+<td>string</td>
+<td style="text-align: center;">No</td>
+</tr>
+</tbody>
+</table>
+<h5 id="headers"><strong>Headers</strong></h5>
+<table>
+<thead>
+<tr>
+<th>Header Name</th>
+<th>Description</th>
+<th>Value</th>
+<th style="text-align: center;">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>security</code></td>
+<td>Basic Authorization</td>
+<td></td>
+<td style="text-align: center;">Yes</td>
+</tr>
+</tbody>
+</table>
+<h5 id="sample-request"><strong>Sample Request</strong></h5>
+<div class="highlight"><pre><span></span><code>GET<span class="w"> </span>https://api.muzicplayz.com/v3/playlist?limit<span class="o">=</span><span class="m">10</span><span class="p">&amp;</span><span class="nv">offset</span><span class="o">=</span><span class="m">20</span><span class="p">&amp;</span><span class="nv">search</span><span class="o">=</span>jazz<span class="w"> </span>
+<span class="w">  </span>security:<span class="w"> </span>
+<span class="w">    </span>-<span class="w"> </span>basauth:<span class="w"> </span><span class="o">[]</span><span class="w"> </span>
+</code></pre></div>
+<h5 id="response"><strong>Response</strong></h5>
+<ul>
+<li>
+<h6 id="details-of-the-playlist-with-songs">Details of the playlist with songs.</h6>
+</li>
+</ul>
+<h6 id="componentsschemasplaylistwithsongs"><code>/components/schemas/playlistwithsongs</code></h6>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+<th>Type</th>
+<th style="text-align: center;">Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Id of the playlist</td>
+<td>integer</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>Name of the playlist</td>
+<td>string</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>songs</code></td>
+<td>Array of song details</td>
+<td>array</td>
+<td style="text-align: center;"><a href="#componentsschemassong">Check song details</a></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<h6 id="details-of-related-to-the-songs-in-the-playlist">Details of related to the songs in the playlist.</h6>
+</li>
+</ul>
+<h6 id="componentsschemassong"><code>/components/schemas/song</code></h6>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+<th>Type</th>
+<th style="text-align: center;">Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Id of the song</td>
+<td>integer</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>Name of the song</td>
+<td>string</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>artist</code></td>
+<td>Name of the song</td>
+<td>string</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h5 id="sample-response"><strong>Sample Response</strong></h5>
+<div class="highlight"><pre><span></span><code>[
+  {
+    &quot;id&quot;: 0,
+    &quot;name&quot;: &quot;string&quot;,
+    &quot;songs&quot;: [
+      {
+        &quot;id&quot;: 0,
+        &quot;title&quot;: &quot;string&quot;,
+        &quot;artist&quot;: &quot;string&quot;
+      }
+    ]
+  }
+]
+</code></pre></div>
+<hr />
+<hr />
+<h2 id="creates-a-playlist-post-playlist">Creates a playlist - POST Playlist</h2>
+<p>Creates a song playlist.</p>
+<h5 id="url_1"><strong>URL</strong></h5>
+<div class="highlight"><pre><span></span><code>POST<span class="w"> </span>https://api.muzicplayz.com/v3/playlist
+</code></pre></div>
+<h5 id="headers_1"><strong>Headers</strong></h5>
+<table>
+<thead>
+<tr>
+<th>Header Name</th>
+<th>Description</th>
+<th>Value</th>
+<th style="text-align: center;">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>security</code></td>
+<td>Basic Authorization</td>
+<td></td>
+<td style="text-align: center;">Yes</td>
+</tr>
+</tbody>
+</table>
+<h5 id="request-body"><strong>Request Body</strong></h5>
+<ul>
+<li>
+<h6 id="details-of-the-new-song-playlist">Details of the new song playlist</h6>
+</li>
+</ul>
+<h6 id="componentsschemasnewplaylist"><code>/components/schemas/newPlaylist</code></h6>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>Name of the playlist</td>
+<td>string</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr>
+<td><code>songIds</code></td>
+<td>Array of song Ids</td>
+<td>array</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+</tbody>
+</table>
+<h5 id="sample-request_1"><strong>Sample Request</strong></h5>
+<div class="highlight"><pre><span></span><code>POST<span class="w"> </span>https://api.muzicplayz.com/v3/playlist
+<span class="w">  </span>security:<span class="w"> </span>
+<span class="w">    </span>-<span class="w"> </span>basauth:<span class="w"> </span><span class="o">[]</span>
+<span class="w">  </span>requestBody:
+<span class="w">    </span>required:<span class="w"> </span><span class="nb">true</span>
+<span class="w">    </span>content:
+<span class="w">      </span>application/json:
+<span class="w">      </span>schema:
+<span class="w">        </span><span class="nv">$ref</span>:<span class="w"> </span><span class="s2">&quot;#/components/schemas/newPlaylist&quot;</span>
+</code></pre></div>
+<h5 id="response_1"><strong>Response</strong></h5>
+<ul>
+<li>
+<h6 id="details-of-the-playlist-with-songs_1">Details of the playlist with songs.</h6>
+</li>
+</ul>
+<h6 id="componentsschemasplaylistwithsongs_1"><code>/components/schemas/playlistwithsongs</code></h6>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+<th>Type</th>
+<th style="text-align: center;">Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Id of the playlist</td>
+<td>integer</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>Name of the playlist</td>
+<td>string</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>songs</code></td>
+<td>Array of song details</td>
+<td>array</td>
+<td style="text-align: center;"><a href="#componentsschemassong">Check song details</a></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<h6 id="details-of-related-to-the-songs-in-the-playlist_1">Details of related to the songs in the playlist.</h6>
+</li>
+</ul>
+<h6 id="componentsschemassong_1"><code>/components/schemas/song</code></h6>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+<th>Type</th>
+<th style="text-align: center;">Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Id of the song</td>
+<td>integer</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>Name of the song</td>
+<td>string</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>artist</code></td>
+<td>Name of the song</td>
+<td>string</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h5 id="sample-response_1"><strong>Sample Response</strong></h5>
+<div class="highlight"><pre><span></span><code><span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;id&quot;</span>:<span class="w"> </span><span class="m">0</span>,
+<span class="w">  </span><span class="s2">&quot;name&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;songs&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">    </span><span class="o">{</span>
+<span class="w">      </span><span class="s2">&quot;id&quot;</span>:<span class="w"> </span><span class="m">0</span>,
+<span class="w">      </span><span class="s2">&quot;title&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;artist&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">  </span><span class="o">]</span>
+<span class="o">}</span>
+</code></pre></div>
+<hr />
+<hr />
+<h2 id="returns-a-specific-playlist-get-specific-playlist">Returns a specific playlist - GET Specific Playlist</h2>
+<p>Gets a specific song playlist.</p>
+<h5 id="url_2"><strong>URL</strong></h5>
+<div class="highlight"><pre><span></span><code>GET<span class="w"> </span>https://api.muzicplayz.com/v3/playlist/<span class="o">{</span>playlist-id<span class="o">}</span>
+</code></pre></div>
+<h5 id="path-parameters"><strong>Path Parameters</strong></h5>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>playlist-id</code></td>
+<td>Id of the playlist to return</td>
+<td>integer</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+</tbody>
+</table>
+<h5 id="headers_2"><strong>Headers</strong></h5>
+<table>
+<thead>
+<tr>
+<th>Header Name</th>
+<th>Description</th>
+<th>Value</th>
+<th style="text-align: center;">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>security</code></td>
+<td>Basic Authorization</td>
+<td></td>
+<td style="text-align: center;">Yes</td>
+</tr>
+</tbody>
+</table>
+<h5 id="sample-request_2"><strong>Sample Request</strong></h5>
+<div class="highlight"><pre><span></span><code>GET<span class="w"> </span>https://api.muzicplayz.com/v3/playlist/<span class="o">{</span>playlist-id<span class="o">}</span>
+<span class="w">  </span>security:
+<span class="w">    </span>-<span class="w"> </span>basauth:<span class="w"> </span><span class="o">[]</span>
+<span class="w">  </span>parameters:
+<span class="w">    </span>-<span class="w"> </span>name:<span class="w"> </span>playlist-id
+<span class="w">      </span><span class="k">in</span>:<span class="w"> </span>path
+<span class="w">      </span>required:<span class="w"> </span><span class="nb">true</span>
+<span class="w">      </span>schema:
+<span class="w">        </span>type:<span class="w"> </span>string<span class="w"> </span>
+</code></pre></div>
+<h5 id="response_2"><strong>Response</strong></h5>
+<ul>
+<li>
+<h6 id="details-of-the-playlist-with-songs_2">Details of the playlist with songs.</h6>
+</li>
+</ul>
+<h6 id="componentsschemasplaylistwithsongs_2"><code>/components/schemas/playlistwithsongs</code></h6>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+<th>Type</th>
+<th style="text-align: center;">Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Id of the playlist</td>
+<td>integer</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>Name of the playlist</td>
+<td>string</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>songs</code></td>
+<td>Array of song details</td>
+<td>array</td>
+<td style="text-align: center;"><a href="#componentsschemassong">Check song details</a></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<h6 id="details-of-related-to-the-songs-in-the-playlist_2">Details of related to the songs in the playlist.</h6>
+</li>
+</ul>
+<h6 id="componentsschemassong_2"><code>/components/schemas/song</code></h6>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+<th>Type</th>
+<th style="text-align: center;">Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Id of the song</td>
+<td>integer</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>Name of the song</td>
+<td>string</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>artist</code></td>
+<td>Name of the song</td>
+<td>string</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h5 id="sample-response_2"><strong>Sample Response</strong></h5>
+<div class="highlight"><pre><span></span><code>[
+  {
+    &quot;id&quot;: 0,
+    &quot;name&quot;: &quot;string&quot;,
+    &quot;songs&quot;: [
+      {
+        &quot;id&quot;: 0,
+        &quot;title&quot;: &quot;string&quot;,
+        &quot;artist&quot;: &quot;string&quot;
+      }
+    ]
+  }
+]
+</code></pre></div>
+<hr />
+<hr />
+<h2 id="deletes-a-specific-playlist-delete-specific-playlist">Deletes a specific playlist - DELETE Specific Playlist</h2>
+<p>Deletes a specific song playlist.</p>
+<h5 id="url_3"><strong>URL</strong></h5>
+<div class="highlight"><pre><span></span><code>DELETE<span class="w"> </span>https://api.muzicplayz.com/v3/playlist/<span class="o">{</span>playlist-id<span class="o">}</span>
+</code></pre></div>
+<h5 id="path-parameters_1"><strong>Path Parameters</strong></h5>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>playlist-id</code></td>
+<td>Id of the playlist to return</td>
+<td>integer</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+</tbody>
+</table>
+<h5 id="headers_3"><strong>Headers</strong></h5>
+<table>
+<thead>
+<tr>
+<th>Header Name</th>
+<th>Description</th>
+<th>Value</th>
+<th style="text-align: center;">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>security</code></td>
+<td>Basic Authorization</td>
+<td></td>
+<td style="text-align: center;">Yes</td>
+</tr>
+</tbody>
+</table>
+<h5 id="sample-request_3"><strong>Sample Request</strong></h5>
+<div class="highlight"><pre><span></span><code>DELETE<span class="w"> </span>https://api.muzicplayz.com/v3/playlist/<span class="o">{</span>playlist-id<span class="o">}</span>
+<span class="w">  </span>security:
+<span class="w">    </span>-<span class="w"> </span>basauth:<span class="w"> </span><span class="o">[]</span>
+<span class="w">  </span>parameters:
+<span class="w">    </span>-<span class="w"> </span>name:<span class="w"> </span>playlist-id
+<span class="w">      </span><span class="k">in</span>:<span class="w"> </span>path
+<span class="w">      </span>required:<span class="w"> </span><span class="nb">true</span>
+<span class="w">      </span>schema:
+<span class="w">        </span>type:<span class="w"> </span>string<span class="w"> </span>
+</code></pre></div>
+<h5 id="response_3"><strong>Response</strong></h5>
+<ul>
+<li>
+<h6 id="details-of-the-error-message-in-response">Details of the error message in response.</h6>
+</li>
+</ul>
+<h6 id="componentsschemaserror"><code>/components/schemas/error</code></h6>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+<th>Type</th>
+<th style="text-align: center;">Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errormsg</code></td>
+<td>Id of the playlist</td>
+<td>integer</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>logdata</code></td>
+<td>Name of the playlist</td>
+<td>string</td>
+<td style="text-align: center;"><a href="#componentsschemassong">Check logdata details</a></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<h6 id="details-of-logdata">Details of logdata.</h6>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+<th>Type</th>
+<th style="text-align: center;">Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>entry</code></td>
+<td>Id of the song</td>
+<td>integer</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td>Name of the song</td>
+<td>integer</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h5 id="sample-response_3"><strong>Sample Response</strong></h5>
+<div class="highlight"><pre><span></span><code>{
+  &quot;errormsg&quot;: &quot;string&quot;,
+  &quot;logdata&quot;: {
+    &quot;entry&quot;: 0,
+    &quot;date&quot;: 0
+  }
+}
+</code></pre></div>
+<hr />
+<hr />
+<h2 id="returns-a-specific-playlist-as-image-get-specific-playlist-as-image">Returns a specific playlist as Image - GET Specific Playlist as Image</h2>
+<p>Gets a specific song playlist as an image.</p>
+<h5 id="url_4"><strong>URL</strong></h5>
+<div class="highlight"><pre><span></span><code>GET<span class="w"> </span>https://api.muzicplayz.com/v3/playlist/<span class="o">{</span>playlist-id<span class="o">}</span>/image
+</code></pre></div>
+<h5 id="path-parameters_2"><strong>Path Parameters</strong></h5>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>playlist-id</code></td>
+<td>Id of the playlist to return</td>
+<td>integer</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+</tbody>
+</table>
+<h5 id="headers_4"><strong>Headers</strong></h5>
+<table>
+<thead>
+<tr>
+<th>Header Name</th>
+<th>Description</th>
+<th>Value</th>
+<th style="text-align: center;">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>security</code></td>
+<td>Basic Authorization</td>
+<td></td>
+<td style="text-align: center;">Yes</td>
+</tr>
+</tbody>
+</table>
+<h5 id="sample-request_4"><strong>Sample Request</strong></h5>
+<div class="highlight"><pre><span></span><code>GET<span class="w"> </span>https://api.muzicplayz.com/v3/playlist/<span class="o">{</span>playlist-id<span class="o">}</span>/image
+<span class="w">  </span>security:
+<span class="w">    </span>-<span class="w"> </span>basauth:<span class="w"> </span><span class="o">[]</span>
+<span class="w">  </span>parameters:
+<span class="w">    </span>-<span class="w"> </span>name:<span class="w"> </span>playlist-id
+<span class="w">      </span><span class="k">in</span>:<span class="w"> </span>path
+<span class="w">      </span>required:<span class="w"> </span><span class="nb">true</span>
+<span class="w">      </span>schema:
+<span class="w">        </span>type:<span class="w"> </span>string<span class="w"> </span>
+</code></pre></div>
+<h5 id="sample-response_4"><strong>Sample Response</strong></h5>
+<div class="highlight"><pre><span></span><code>string
+</code></pre></div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../authentication/" class="btn btn-neutral float-left" title="Authentication"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../errors/" class="btn btn-neutral float-right" title="Errors & Status Codes">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../authentication/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../errors/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

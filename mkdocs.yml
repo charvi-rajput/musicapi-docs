@@ -1,0 +1,32 @@
+site_name: Music API Docs
+
+theme: readthedocs
+favicon: assets/favicon.ico
+
+markdown_extensions:
+  - codehilite
+  - pymdownx.highlight
+  - pymdownx.superfences
+
+
+nav:
+  - Home: index.md
+  - Overview:
+      - What is the API?: overview/what-is-api.md
+      - Key Concepts: overview/key-concepts.md
+
+  - API Reference:
+      - Authentication: api/authentication.md
+      - Endpoints: api/endpoints.md
+      - Errors & Status Codes: api/errors.md
+
+  - Use Cases:
+      - Quickstart: use-cases/quickstart.md
+      - Real-World Scenarios: use-cases/real-world.md
+
+  - Tools:
+      - Swagger / OpenAPI Spec: tools/swagger.md
+
+  - Changelog:
+      - API Version History: changelog/api-versions.md
+
