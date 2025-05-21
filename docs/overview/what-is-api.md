@@ -19,4 +19,4 @@ The Music API is a RESTful web service that allows developers to manage and mani
 - RESTful Architecture
 - Written in YAML  
 - JSON-formatted requests and responses
-- Secured with Basic authentication
+- Secured with Basic authorization

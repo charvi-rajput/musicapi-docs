@@ -4,7 +4,7 @@ Understanding the core concepts of the Music API will help you build efficiently
 
 ## Authentication
 
-All API requests require a Basic authorisation.
+All API requests require a Basic authorization.
 
 ## Resources
 

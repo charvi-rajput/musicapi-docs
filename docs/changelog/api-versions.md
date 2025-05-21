@@ -28,7 +28,7 @@ security:
 ```
 
 1. **Rate Limiting/ Throttling**  
-Requests are *none by default*.
+Number of Requests that this API can receive in a specific period are *none by default*.
 
 ### Technical Details
 
@@ -90,7 +90,7 @@ security:
 ```
 
 1. **Rate Limiting/ Throttling**  
-Requests are *none by default*.
+Number of Requests that this API can receive in a specific period are *none by default*.
 
 ### Technical Details
 

@@ -2,7 +2,7 @@
 
 This is a sample Mkdocs generated Music API Developers' Documentation. Here is the OpenAPI/ Swagger generated API reference. [Click Here](https://charvi-rajput.github.io/musicapi/)
 
-Welcome to the Music API developers' documentation. This guide is designed to help developers understand and integrate with our RESTful API, enabling you to manage playlists and users with ease.
+This guide is designed to help developers understand and integrate with our RESTful API, enabling you to manage playlists and users with ease.
 
 ## Overview
 Learn what the API does, key concepts, and how it fits into your music-related application.
@@ -11,7 +11,7 @@ Learn what the API does, key concepts, and how it fits into your music-related a
 Dive into the technical details — all available endpoints, request/response formats, and error codes.
 
 ## Use Cases
-Explore real-world examples and tutorials on using the API, including quickstarts and webhook integration.
+Explore real-world examples and tutorials on using the API, including quickstarts.
 
 ## Tools
 Download the OpenAPI specification and access tools like Swagger for testing.

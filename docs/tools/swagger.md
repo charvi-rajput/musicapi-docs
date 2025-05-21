@@ -17,11 +17,12 @@ This interactive documentation lets you:
 - View expected request/response payloads
 - See all available endpoints, schemas and parameters
 
-## 📦 Download the OpenAPI Spec
+## Download the OpenAPI Spec
 
 To integrate with tooling or generate clients, download the OpenAPI (YAML) spec:
 
 - [musicapi.yaml](https://charvi-rajput.github.io/musicapi/musicapi.yaml)
+- [Download Swagger UI](https://swagger.io/tools/swagger-ui/download/)
 
 
 
