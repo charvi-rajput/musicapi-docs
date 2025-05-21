@@ -1,6 +1,6 @@
 site_name: Music API Docs
 
-theme: readthedocs
+theme: material
 favicon: assets/favicon.ico
 
 markdown_extensions:
