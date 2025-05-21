@@ -2,7 +2,7 @@
 
 The following endpoints allow you to Get, Create & Delete your Playlists via the Music API.
 
-1. ## Returns the playlists - GET Playlists
+## Returns the playlists - GET Playlists
 Gets all the song playlists of a user.
 
 ##### **URL** 
